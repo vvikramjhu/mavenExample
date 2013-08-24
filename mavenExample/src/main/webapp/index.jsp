@@ -9,4 +9,5 @@
 <body>
 	<h1>Testing maven project</h1>
 </body>
+
 </html>
