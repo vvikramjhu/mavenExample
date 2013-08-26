@@ -1,0 +1,288 @@
+Aug 26, 2013 5:43:52 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/lib/jvm/java-7-oracle/jre/lib/i386/client:/usr/lib/jvm/java-7-oracle/jre/lib/i386::/usr/java/packages/lib/i386:/lib:/usr/lib
+Aug 26, 2013 5:43:52 PM org.apache.tomcat.util.digester.SetPropertiesRule begin
+WARNING: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:mavenExample' did not find a matching property.
+Aug 26, 2013 5:43:52 PM org.apache.tomcat.util.digester.SetPropertiesRule begin
+WARNING: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:ServletExample' did not find a matching property.
+Aug 26, 2013 5:43:53 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Aug 26, 2013 5:43:53 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Aug 26, 2013 5:43:53 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 2738 ms
+Aug 26, 2013 5:43:53 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Aug 26, 2013 5:43:53 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.33
+Aug 26, 2013 5:43:55 PM org.apache.catalina.loader.WebappClassLoader validateJarFile
+INFO: validateJarFile(/media/Yojimbo/Workspaces/tutorials2/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/mavenExample/WEB-INF/lib/javax.servlet-api-3.1.0.jar) - jar not loaded. See Servlet Spec 2.3, section 9.7.2. Offending class: javax/servlet/Servlet.class
+Aug 26, 2013 5:44:04 PM org.apache.catalina.core.ApplicationContext log
+INFO: No Spring WebApplicationInitializer types detected on classpath
+Aug 26, 2013 5:44:05 PM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+17:44:08,120 ERROR ContextLoader:319 - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in ServletContext resource [/WEB-INF/datasource-config.xml]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] class or package not found
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1486)
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:524)
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:461)
+    at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+    at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+    at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+    at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+    at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1117)
+    at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:922)
+    at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+    at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:389)
+    at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:294)
+    at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:112)
+    at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4791)
+    at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5285)
+    at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+    at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+    at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+    at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+    at java.lang.Thread.run(Thread.java:724)
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] class or package not found
+    at org.hibernate.ejb.Ejb3Configuration.addNamedAnnotatedClasses(Ejb3Configuration.java:1410)
+    at org.hibernate.ejb.Ejb3Configuration.addClassesToSessionFactory(Ejb3Configuration.java:1193)
+    at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:1057)
+    at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:702)
+    at org.hibernate.ejb.HibernatePersistence.createContainerEntityManagerFactory(HibernatePersistence.java:75)
+    at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:288)
+    at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:310)
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1545)
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1483)
+    ... 22 more
+Caused by: java.lang.ClassNotFoundException: com.example.j2eeapp.domain.UserEntity
+    at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1714)
+    at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1559)
+    at java.lang.Class.forName0(Native Method)
+    at java.lang.Class.forName(Class.java:270)
+    at org.hibernate.internal.util.ReflectHelper.classForName(ReflectHelper.java:170)
+    at org.hibernate.ejb.Ejb3Configuration.classForName(Ejb3Configuration.java:1327)
+    at org.hibernate.ejb.Ejb3Configuration.addNamedAnnotatedClasses(Ejb3Configuration.java:1399)
+    ... 30 more
+Aug 26, 2013 5:44:08 PM org.apache.catalina.core.StandardContext listenerStart
+SEVERE: Exception sending context initialized event to listener instance of class org.springframework.web.context.ContextLoaderListener
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in ServletContext resource [/WEB-INF/datasource-config.xml]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] class or package not found
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1486)
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:524)
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:461)
+    at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+    at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+    at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+    at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+    at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1117)
+    at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:922)
+    at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+    at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:389)
+    at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:294)
+    at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:112)
+    at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4791)
+    at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5285)
+    at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+    at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+    at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+    at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+    at java.lang.Thread.run(Thread.java:724)
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] class or package not found
+    at org.hibernate.ejb.Ejb3Configuration.addNamedAnnotatedClasses(Ejb3Configuration.java:1410)
+    at org.hibernate.ejb.Ejb3Configuration.addClassesToSessionFactory(Ejb3Configuration.java:1193)
+    at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:1057)
+    at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:702)
+    at org.hibernate.ejb.HibernatePersistence.createContainerEntityManagerFactory(HibernatePersistence.java:75)
+    at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:288)
+    at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:310)
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1545)
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1483)
+    ... 22 more
+Caused by: java.lang.ClassNotFoundException: com.example.j2eeapp.domain.UserEntity
+    at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1714)
+    at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1559)
+    at java.lang.Class.forName0(Native Method)
+    at java.lang.Class.forName(Class.java:270)
+    at org.hibernate.internal.util.ReflectHelper.classForName(ReflectHelper.java:170)
+    at org.hibernate.ejb.Ejb3Configuration.classForName(Ejb3Configuration.java:1327)
+    at org.hibernate.ejb.Ejb3Configuration.addNamedAnnotatedClasses(Ejb3Configuration.java:1399)
+    ... 30 more
+
+Aug 26, 2013 5:44:08 PM com.sun.faces.config.ConfigureListener contextInitialized
+INFO: Initializing Mojarra 2.2.2 ( 20130809-1625 https://svn.java.net/svn/mojarra~svn/tags/2.2.2@12376) for context '/mavenExample'
+Aug 26, 2013 5:44:08 PM com.sun.faces.spi.InjectionProviderFactory createInstance
+INFO: JSF1048: PostConstruct/PreDestroy annotations present.  ManagedBeans methods marked with these annotations will have said annotations processed.
+Aug 26, 2013 5:44:11 PM com.sun.faces.config.ConfigureListener contextInitialized
+SEVERE: Critical error during deployment: 
+com.sun.faces.config.ConfigurationException: 
+  Source Document: jar:file:/media/Yojimbo/Workspaces/tutorials2/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/mavenExample/WEB-INF/lib/primefaces-3.4.jar!/META-INF/faces-config.xml
+  Cause: Class 'org.primefaces.component.fileupload.FileUploadRenderer' is missing a runtime dependency: java.lang.NoClassDefFoundError: org/apache/commons/fileupload/FileItem
+    at com.sun.faces.config.processor.AbstractConfigProcessor.createInstance(AbstractConfigProcessor.java:339)
+    at com.sun.faces.config.processor.RenderKitConfigProcessor.addRenderers(RenderKitConfigProcessor.java:313)
+    at com.sun.faces.config.processor.RenderKitConfigProcessor.process(RenderKitConfigProcessor.java:179)
+    at com.sun.faces.config.processor.AbstractConfigProcessor.invokeNext(AbstractConfigProcessor.java:152)
+    at com.sun.faces.config.processor.ManagedBeanConfigProcessor.process(ManagedBeanConfigProcessor.java:270)
+    at com.sun.faces.config.processor.AbstractConfigProcessor.invokeNext(AbstractConfigProcessor.java:152)
+    at com.sun.faces.config.processor.ValidatorConfigProcessor.process(ValidatorConfigProcessor.java:120)
+    at com.sun.faces.config.processor.AbstractConfigProcessor.invokeNext(AbstractConfigProcessor.java:152)
+    at com.sun.faces.config.processor.ConverterConfigProcessor.process(ConverterConfigProcessor.java:126)
+    at com.sun.faces.config.processor.AbstractConfigProcessor.invokeNext(AbstractConfigProcessor.java:152)
+    at com.sun.faces.config.processor.ComponentConfigProcessor.process(ComponentConfigProcessor.java:117)
+    at com.sun.faces.config.processor.AbstractConfigProcessor.invokeNext(AbstractConfigProcessor.java:152)
+    at com.sun.faces.config.processor.ApplicationConfigProcessor.process(ApplicationConfigProcessor.java:340)
+    at com.sun.faces.config.processor.AbstractConfigProcessor.invokeNext(AbstractConfigProcessor.java:152)
+    at com.sun.faces.config.processor.LifecycleConfigProcessor.process(LifecycleConfigProcessor.java:116)
+    at com.sun.faces.config.processor.AbstractConfigProcessor.invokeNext(AbstractConfigProcessor.java:152)
+    at com.sun.faces.config.processor.FactoryConfigProcessor.process(FactoryConfigProcessor.java:239)
+    at com.sun.faces.config.ConfigManager.initialize(ConfigManager.java:435)
+    at com.sun.faces.config.ConfigureListener.contextInitialized(ConfigureListener.java:214)
+    at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4791)
+    at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5285)
+    at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+    at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+    at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+    at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+    at java.lang.Thread.run(Thread.java:724)
+Caused by: java.lang.NoClassDefFoundError: org/apache/commons/fileupload/FileItem
+    at java.lang.Class.getDeclaredMethods0(Native Method)
+    at java.lang.Class.privateGetDeclaredMethods(Class.java:2521)
+    at java.lang.Class.getDeclaredMethods(Class.java:1845)
+    at com.sun.faces.util.Util.classHasAnnotations(Util.java:992)
+    at com.sun.faces.application.ApplicationInstanceFactoryMetadataMap.onPut(ApplicationInstanceFactoryMetadataMap.java:75)
+    at com.sun.faces.application.ApplicationInstanceFactoryMetadataMap.onPut(ApplicationInstanceFactoryMetadataMap.java:43)
+    at com.sun.faces.util.MetadataWrapperMap.put(MetadataWrapperMap.java:91)
+    at com.sun.faces.config.processor.AbstractConfigProcessor.loadClass(AbstractConfigProcessor.java:378)
+    at com.sun.faces.config.processor.AbstractConfigProcessor.createInstance(AbstractConfigProcessor.java:278)
+    ... 28 more
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.fileupload.FileItem
+    at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1714)
+    at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1559)
+    ... 37 more
+
+Aug 26, 2013 5:44:11 PM org.apache.catalina.core.StandardContext listenerStart
+SEVERE: Exception sending context initialized event to listener instance of class com.sun.faces.config.ConfigureListener
+java.lang.RuntimeException: com.sun.faces.config.ConfigurationException: 
+  Source Document: jar:file:/media/Yojimbo/Workspaces/tutorials2/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/mavenExample/WEB-INF/lib/primefaces-3.4.jar!/META-INF/faces-config.xml
+  Cause: Class 'org.primefaces.component.fileupload.FileUploadRenderer' is missing a runtime dependency: java.lang.NoClassDefFoundError: org/apache/commons/fileupload/FileItem
+    at com.sun.faces.config.ConfigureListener.contextInitialized(ConfigureListener.java:273)
+    at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4791)
+    at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5285)
+    at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+    at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+    at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+    at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+    at java.lang.Thread.run(Thread.java:724)
+Caused by: com.sun.faces.config.ConfigurationException: 
+  Source Document: jar:file:/media/Yojimbo/Workspaces/tutorials2/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/mavenExample/WEB-INF/lib/primefaces-3.4.jar!/META-INF/faces-config.xml
+  Cause: Class 'org.primefaces.component.fileupload.FileUploadRenderer' is missing a runtime dependency: java.lang.NoClassDefFoundError: org/apache/commons/fileupload/FileItem
+    at com.sun.faces.config.processor.AbstractConfigProcessor.createInstance(AbstractConfigProcessor.java:339)
+    at com.sun.faces.config.processor.RenderKitConfigProcessor.addRenderers(RenderKitConfigProcessor.java:313)
+    at com.sun.faces.config.processor.RenderKitConfigProcessor.process(RenderKitConfigProcessor.java:179)
+    at com.sun.faces.config.processor.AbstractConfigProcessor.invokeNext(AbstractConfigProcessor.java:152)
+    at com.sun.faces.config.processor.ManagedBeanConfigProcessor.process(ManagedBeanConfigProcessor.java:270)
+    at com.sun.faces.config.processor.AbstractConfigProcessor.invokeNext(AbstractConfigProcessor.java:152)
+    at com.sun.faces.config.processor.ValidatorConfigProcessor.process(ValidatorConfigProcessor.java:120)
+    at com.sun.faces.config.processor.AbstractConfigProcessor.invokeNext(AbstractConfigProcessor.java:152)
+    at com.sun.faces.config.processor.ConverterConfigProcessor.process(ConverterConfigProcessor.java:126)
+    at com.sun.faces.config.processor.AbstractConfigProcessor.invokeNext(AbstractConfigProcessor.java:152)
+    at com.sun.faces.config.processor.ComponentConfigProcessor.process(ComponentConfigProcessor.java:117)
+    at com.sun.faces.config.processor.AbstractConfigProcessor.invokeNext(AbstractConfigProcessor.java:152)
+    at com.sun.faces.config.processor.ApplicationConfigProcessor.process(ApplicationConfigProcessor.java:340)
+    at com.sun.faces.config.processor.AbstractConfigProcessor.invokeNext(AbstractConfigProcessor.java:152)
+    at com.sun.faces.config.processor.LifecycleConfigProcessor.process(LifecycleConfigProcessor.java:116)
+    at com.sun.faces.config.processor.AbstractConfigProcessor.invokeNext(AbstractConfigProcessor.java:152)
+    at com.sun.faces.config.processor.FactoryConfigProcessor.process(FactoryConfigProcessor.java:239)
+    at com.sun.faces.config.ConfigManager.initialize(ConfigManager.java:435)
+    at com.sun.faces.config.ConfigureListener.contextInitialized(ConfigureListener.java:214)
+    ... 10 more
+Caused by: java.lang.NoClassDefFoundError: org/apache/commons/fileupload/FileItem
+    at java.lang.Class.getDeclaredMethods0(Native Method)
+    at java.lang.Class.privateGetDeclaredMethods(Class.java:2521)
+    at java.lang.Class.getDeclaredMethods(Class.java:1845)
+    at com.sun.faces.util.Util.classHasAnnotations(Util.java:992)
+    at com.sun.faces.application.ApplicationInstanceFactoryMetadataMap.onPut(ApplicationInstanceFactoryMetadataMap.java:75)
+    at com.sun.faces.application.ApplicationInstanceFactoryMetadataMap.onPut(ApplicationInstanceFactoryMetadataMap.java:43)
+    at com.sun.faces.util.MetadataWrapperMap.put(MetadataWrapperMap.java:91)
+    at com.sun.faces.config.processor.AbstractConfigProcessor.loadClass(AbstractConfigProcessor.java:378)
+    at com.sun.faces.config.processor.AbstractConfigProcessor.createInstance(AbstractConfigProcessor.java:278)
+    ... 28 more
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.fileupload.FileItem
+    at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1714)
+    at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1559)
+    ... 37 more
+
+Aug 26, 2013 5:44:11 PM org.apache.catalina.core.StandardContext startInternal
+SEVERE: Error listenerStart
+Aug 26, 2013 5:44:11 PM org.apache.catalina.core.StandardContext startInternal
+SEVERE: Context [/mavenExample] startup failed due to previous errors
+Aug 26, 2013 5:44:11 PM javax.faces.FactoryFinder$FactoryManager getFactory
+SEVERE: Application was not properly initialized at startup, could not find Factory: javax.faces.application.ApplicationFactory. Attempting to find backup.
+Aug 26, 2013 5:44:11 PM com.sun.faces.config.ConfigureListener contextDestroyed
+SEVERE: Unexpected exception when attempting to tear down the Mojarra runtime
+java.lang.IllegalStateException: Could not find backup for factory javax.faces.application.ApplicationFactory. 
+    at javax.faces.FactoryFinder$FactoryManager.getFactory(FactoryFinder.java:1135)
+    at javax.faces.FactoryFinder.getFactory(FactoryFinder.java:379)
+    at com.sun.faces.config.InitFacesContext.getApplication(InitFacesContext.java:140)
+    at com.sun.faces.config.ConfigureListener.contextDestroyed(ConfigureListener.java:310)
+    at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4831)
+    at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5478)
+    at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:232)
+    at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:160)
+    at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+    at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+    at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+    at java.lang.Thread.run(Thread.java:724)
+
+Aug 26, 2013 5:44:11 PM org.apache.catalina.core.ApplicationContext log
+INFO: Closing Spring root WebApplicationContext
+Aug 26, 2013 5:44:11 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/mavenExample] registered the JDBC driver [oracle.jdbc.driver.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Aug 26, 2013 5:44:12 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+Aug 26, 2013 5:44:12 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Aug 26, 2013 5:44:12 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 18628 ms
+Aug 26, 2013 5:45:02 PM org.apache.catalina.loader.WebappClassLoader modified
+SEVERE:     Resource '/WEB-INF/classes/com/vvikramjhu/TestServlet.class' is missing
+Aug 26, 2013 5:45:02 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/ServletExample] has started
+Aug 26, 2013 5:45:02 PM org.apache.catalina.core.StandardContext resourcesStart
+SEVERE: Error starting static Resources
+java.lang.IllegalArgumentException: Document base /media/Yojimbo/Workspaces/tutorials2/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ServletExample does not exist or is not a readable directory
+    at org.apache.naming.resources.FileDirContext.setDocBase(FileDirContext.java:138)
+    at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4906)
+    at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5086)
+    at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+    at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3920)
+    at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:426)
+    at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1345)
+    at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1530)
+    at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1540)
+    at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1540)
+    at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1519)
+    at java.lang.Thread.run(Thread.java:724)
+
+Aug 26, 2013 5:45:02 PM org.apache.catalina.core.StandardContext startInternal
+SEVERE: Error in resourceStart()
+Aug 26, 2013 5:45:02 PM org.apache.catalina.core.StandardContext startInternal
+SEVERE: Error getConfigured
+Aug 26, 2013 5:45:02 PM org.apache.catalina.core.StandardContext startInternal
+SEVERE: Context [/ServletExample] startup failed due to previous errors
+Aug 26, 2013 5:45:02 PM org.apache.catalina.util.LifecycleBase stop
+INFO: The stop() method was called on component [WebappLoader[/ServletExample]] after stop() had already been called. The second call will be ignored.
+Aug 26, 2013 5:45:02 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/ServletExample] is completed
