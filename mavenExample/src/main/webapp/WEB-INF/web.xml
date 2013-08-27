@@ -35,7 +35,6 @@
 		<servlet-class>org.springframework.js.resource.ResourceServlet</servlet-class>
 		<load-on-startup>0</load-on-startup>
 	</servlet>
-
 	<servlet-mapping>
 		<servlet-name>Resources Servlet</servlet-name>
 		<url-pattern>/resources/*</url-pattern>
