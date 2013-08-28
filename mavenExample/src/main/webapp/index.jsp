@@ -5,7 +5,5 @@
 <head>
 <meta http-equiv="Refresh" content="0; URL=app/main" />
 </head>
-<body>
-	<h1>Testing maven project</h1>
-</body>
+<body></body>
 </html>

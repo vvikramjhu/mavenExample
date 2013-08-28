@@ -9,6 +9,7 @@
 	<configs>
 		<config>src/main/webapp/WEB-INF/datasource-config.xml</config>
 		<config>src/main/webapp/WEB-INF/webflow-config.xml</config>
+		<config>src/main/webapp/WEB-INF/applicationContext.xml</config>
 	</configs>
 	<configSets>
 		<configSet>
